@@ -15,10 +15,14 @@ markAsReadButton.addEventListener('click', () => {
 
 // When the user clicks notification button
 notificationList.forEach((notification, index) => {
-  notification.addEventListener('click', () => {
-     notification.classList.remove('unread-background');
-     unreadIcons[index].style.display = 'none';
-     numberOfNotifications.textContent = numberOfNotifications.textContent - 1;
+    notification.addEventListener('click', () => {
+        notification.classList.remove('unread-background');
+        unreadIcons[index].style.display = 'none';
+        if (Number(numberOfNotifications.textContent) < 1) {
+            numberOfNotifications.textContent = '0';
+        } else {
+            numberOfNotifications.textContent = String(numberOfNotifications.textContent - 1);
+        }
   })
 })
 
