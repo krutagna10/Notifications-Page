@@ -1,11 +1,11 @@
-const markAsReadButton = document.querySelector('.mark-as-read');
-const notifications = document.querySelector('.notifications');
-const numberOfNotifications = document.querySelector('.number-of-notifications');
+const readButton = document.querySelector('.notifications__read-btn');
+const notifications = document.querySelector('.notifications-wrapper');
+const numberOfNotifications = document.querySelector('.notifications__number');
 const notificationList = document.querySelectorAll('.notification');
-const unreadIcons = document.querySelectorAll('.unread-icon');
+const unreadIcons = document.querySelectorAll('.notification__unread-icon');
 
 // When the user clicks markAsReadButton
-markAsReadButton.addEventListener('click', () => {
+readButton.addEventListener('click', () => {
   notifications.classList.add('no-unread-message');
   numberOfNotifications.textContent = 0;
   for (let notification of notificationList) {
@@ -27,8 +27,8 @@ notificationList.forEach((notification, index) => {
 })
 
 // Dark mode toggle
-const lightModeIcon = document.querySelector('.light-mode-icon');
-const darkModeIcon = document.querySelector('.dark-mode-icon');
+const lightModeIcon = document.querySelector('.icon--light-mode');
+const darkModeIcon = document.querySelector('.icon--dark-mode');
 const body = document.querySelector('body');
 
 darkModeIcon.addEventListener('click', () => {

@@ -1,36 +1,36 @@
 /* Icons */
-.icons{
+.icon{
     display: block;
     font-size: 1.2rem;
     position: absolute;
-    right: 2rem;
+    right: 1rem;
     top: 0.75rem;
     cursor: pointer;
+    z-index: 999;
 }
 
-.light-mode-icon {
+.icon--light-mode {
     display: none;
     transition: all 0.3s ease;
 }
 
-.dark-mode .dark-mode-icon {
+.dark-mode .icon--dark-mode {
     display: none;
     transition: all 0.3s ease;
 }
 
-.dark-mode-icon:hover {
+.icon--dark-mode:hover {
     color: lightseagreen;
 }
 
-.dark-mode .light-mode-icon {
+.dark-mode .icon--light-mode {
     display: block;
     color: white;
 }
 
-.light-mode-icon:hover {
+.icon--light-mode:hover {
     color: orange;
 }
-
 
 /* Dark Mode */
 .dark-mode {
@@ -42,42 +42,33 @@
     background-image: var(--containerDarkBackground);
  }
 
-.dark-mode .user-name,
-.dark-mode .recent-post-heading,
-.dark-mode .mark-as-read {
+.dark-mode .notification__user-name,
+.dark-mode .notification__recent-post,
+.dark-mode .notifications__read-btn {
     color: var(--darkModeTextColor);
 }
 
-.dark-mode .group-message {
+.dark-mode .notification__group-message {
     color: var(--darkModeGroupMessage);
 }
 
-
-
-.dark-mode .message-text {
+.dark-mode .notification__message {
     color: var(--white);
 }
 
-.dark-mode .user-name:hover,
-.dark-mode .recent-post-heading:hover,
-.dark-mode .group-message:hover,
-.dark-mode .mark-as-read:hover {
-    color: var(--lightBlue);
+.dark-mode .notifications__number {
+    background-color: var(--hoverColor);
 }
 
-.dark-mode .number-of-notifications {
-    background-color: var(--lightBlue);
-}
-
-.dark-mode .unread-background {
+.dark-mode .notification--unread-background {
     background-color: var(--darkModeBackground);
 }
 
-.dark-mode .private-message-container {
+.dark-mode .notification__private-message-wrapper {
     color: #dee2e6;
 }
 
-.dark-mode .private-message-container:hover {
+.dark-mode .notification__private-message-wrapper:hover {
     background-color: var(--darkModeBackground);
 }
 
