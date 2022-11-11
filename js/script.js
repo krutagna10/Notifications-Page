@@ -32,8 +32,8 @@ notifications.forEach((notification, index) => {
 })
 
 // Dark mode toggle
-const lightModeIcon = document.querySelector('.icon--light-mode');
-const darkModeIcon = document.querySelector('.icon--dark-mode');
+const lightModeIcon = document.querySelector('.notifications__icon--light');
+const darkModeIcon = document.querySelector('.notifications__icon--dark');
 const body = document.querySelector('body');
 
 darkModeIcon.addEventListener('click', () => {
