@@ -12,15 +12,11 @@
     <title>Frontend Mentor | Notifications page</title>
 </head>
 <body class="dark-mode">
-
-
-
 <main>
-    <section class="notification-section">
-
+    <section class="notifications-section">
         <div class="notifications container">
             <header class="notifications__header flex">
-                <div class="flex">
+                <div class="notifications__content flex">
                     <h1 class="notifications__title">
                         Notifications
                     </h1>
@@ -29,20 +25,24 @@
                 <div class="notifications__header-buttons flex">
                     <button class="notifications__read-btn btn">Mark all as read</button>
                     <div class="notifications__theme-icons">
-                        <ion-icon class="notifications__icon notifications__icon--light" name="sunny-outline"></ion-icon>
-                        <ion-icon class="notifications__icon notifications__icon--dark" name="moon-outline"></ion-icon>
+                        <button class="notifications__btn-theme  notifications__btn-theme--light">
+                            <ion-icon class="notifications__icon notifications__icon--light" name="sunny-outline"></ion-icon>
+                        </button>
+                        <button class="notifications__btn-theme notifications__btn-theme--dark">
+                            <ion-icon class="notifications__icon notifications__icon--dark" name="moon-outline"></ion-icon>
+                        </button>
                     </div>
                 </div>
 
             </header>
 
-            <div class="notifications-wrapper flow">
-                <div class="notification notification--unread-background">
+            <div class="notifications__body flow">
+                <div class="notification notification--unchecked">
                     <div class="notification__profile-wrapper">
                         <img class="notification__profile-pic" src="images/avatar-mark-webber.webp"
                              alt="Mark Webber profile picture">
                     </div>
-                    <div class="notification__text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Mark Webber</a>
                             reacted to your recent post
@@ -55,12 +55,12 @@
                     </div>
                 </div>
 
-                <div class="notification notification--unread-background">
+                <div class="notification notification--unchecked">
                     <div class="notification__profile-wrapper">
                         <img class="notification__profile-pic" src="images/avatar-angela-gray.webp"
                              alt="Angela Gray profile picture">
                     </div>
-                    <div class="text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Angela gray </a>
                             followed you
@@ -73,12 +73,12 @@
                     </div>
                 </div>
 
-                <div class="notification notification--unread-background">
+                <div class="notification notification--unchecked">
                     <div class="notification__profile-wrapper">
                         <img class="notification__profile-pic" src="images/avatar-jacob-thompson.webp"
                              alt="Jacob Thompson profile picture">
                     </div>
-                    <div class="text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Jacon Thompson </a>
                             has joined your group
@@ -96,7 +96,7 @@
                         <img class="notification__profile-pic" src="images/avatar-rizky-hasanuddin.webp"
                              alt="Rizky Hasanuddin profile picture">
                     </div>
-                    <div class="text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Rizky Hasanudding </a>
                             sent you a private message
@@ -118,7 +118,7 @@
                         <img class="notification__profile-pic" src="images/avatar-kimberly-smith.webp"
                              alt="Kimberly Smith profile picture">
                     </div>
-                    <div class="text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Kimberly Smith </a>
                             commented on your picture
@@ -127,9 +127,9 @@
                             1 week ago
                         </p>
                     </div>
-                    <figure class="notification__post-photo-wrapper">
+                    <div class="notification__post-photo-wrapper">
                         <img class="notification__post-photo" src="images/image-chess.webp" alt="A girl playing chess">
-                    </figure>
+                    </div>
                 </div>
 
 
@@ -138,7 +138,7 @@
                         <img class="notification__profile-pic" src="images/avatar-nathan-peterson.webp"
                              alt="Nathan Peterson profile picture">
                     </div>
-                    <div class="text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Nathan Peterson </a>
                             reacted to your recent post
@@ -156,7 +156,7 @@
                         <img class="notification__profile-pic" src="images/avatar-anna-kim.webp"
                              alt="Anna Kim profile picture">
                     </div>
-                    <div class="text-content">
+                    <div class="notification__description">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Anna Kim </a>
                             left the group

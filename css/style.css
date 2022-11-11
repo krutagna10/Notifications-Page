@@ -8,7 +8,6 @@
     --white: hsl(0, 0%, 100%);
     --very-light-grayish-blue: hsl(210, 60%, 98%);
     --light-grayish-blue-1: hsl(211, 68%, 94%);
-    --light-grayish-blue-2: hsl(205, 33%, 90%);
     --grayish-blue: hsl(219, 14%, 63%);
     --dark-gray-blue: hsl(219, 12%, 42%);
     --very-dark-blue: hsl(224, 21%, 14%);
@@ -38,8 +37,9 @@
     --hoverColor: #15aabf;
     --very-light-grayish-blue: #212121;
     --very-dark-blue: hsl(0, 0%, 100%);
-    --dark-gray-blue: hsl(205, 33%, 90%);
+    --dark-gray-blue: hsl(202, 29%, 87%);
     --blue: #15aabf;
+    --grayish-blue: hsl(218, 21%, 77%);
     --light-grayish-blue-1: #212121;
     --container-dark-background: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.8) 100%);
 }
@@ -144,19 +144,59 @@ body {
     margin-left: 0.75rem;
 }
 
-@media (min-width: 48rem) {
-    .notifications__number {
-        width: 2.5rem;
-        margin-left: 1rem;
-    }
-}
-
-
 .notifications__theme-icons {
     position: absolute;
     top: 0.6rem;
     right: 1rem;
+}
 
+.notifications__read-btn {
+    margin-left: auto;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-100);
+}
+
+/* Theme Buttons */
+.notifications__btn-theme {
+    background: transparent;
+    border: none;
+}
+
+.notifications__btn-theme--light {
+    display: none;
+}
+
+.notifications__btn-theme--dark {
+    display: block;
+}
+
+.dark-mode .notifications__btn-theme--light {
+    display: block;
+}
+
+.dark-mode .notifications__btn-theme--dark {
+    display: none;
+}
+
+.notifications__icon {
+    display: block;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.notifications__icon--light {
+    color: white;
+}
+
+.notifications__icon--light:hover {
+    color: orange;
+}
+
+.notifications__icon--dark:hover {
+    color: lightseagreen;
 }
 
 @media (min-width: 24rem) {
@@ -170,56 +210,33 @@ body {
     }
 }
 
-/* Icons */
-.notifications__icon {
-    display: block;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.notifications__icon--light {
-    display: none;
-    color: white;
-}
-
-.notifications__icon--light:hover {
-    color: orange;
-}
-
-.dark-mode .notifications__icon--light {
-    display: block;
-}
-
-.dark-mode .notifications__icon--dark {
-    display: none;
-}
-
-.notifications__icon--dark:hover {
-    color: lightseagreen;
-}
-
-.notifications__read-btn {
-    margin-left: auto;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: var(--font-size-100);
+@media (min-width: 48rem) {
+    .notifications__number {
+        width: 2.5rem;
+        margin-left: 1rem;
+    }
 }
 
 /* Notifications */
 .notification {
     display: flex;
     padding: 1rem;
-    gap: 1.25rem;
+    gap: 1rem;
     transition: all 0.3s ease;
 }
 
 @media (min-width: 48rem) {
     .notification {
         padding-inline: 1.25rem;
+        gap: 1.5rem;
     }
+}
+
+.notification--unchecked {
+    background-color: var(--very-light-grayish-blue);
+    transition: all 0.3s ease;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .notification__profile-pic,
@@ -232,33 +249,33 @@ body {
     margin-left: auto;
 }
 
-/* Messages */
 .notification__message {
     margin-bottom: 0.5rem;
     font-weight: var(--font-weight-medium);
 }
 
+.notification__user-name,
+.notification__recent-post,
+.notification__group-message {
+    transition: all 0.3s ease;
+    font-weight: var(--font-weight-bold);
+}
+
 .notification__user-name {
     text-decoration: none;
-    font-weight: var(--font-weight-bold);
     margin-right: 0.25rem;
-    transition: all 0.3s ease;
     color: var(--very-dark-blue);
 }
 
 .notification__recent-post {
     text-decoration: none;
-    font-weight: var(--font-weight-bold);
     margin-left: 0.25rem;
-    transition: all 0.3s ease;
 }
 
 .notification__group-message {
     color: var(--blue);
     text-decoration: none;
-    font-weight: 800;
     margin-left: 0.2rem;
-    transition: all 0.3s ease;
 }
 
 .notification__user-name:hover,
@@ -269,12 +286,18 @@ body {
 }
 
 .notification__unread-icon {
+    margin-left: 0.35rem;
     display: inline-block;
-    margin-left: 0.5rem;
     height: 0.6rem;
     width: 0.6rem;
     background-color: var(--red);
     border-radius: 50%;
+}
+
+@media (min-width: 48rem) {
+    .notification__unread-icon {
+        margin-left: 0.5rem;
+    }
 }
 
 .notification__time {
@@ -299,12 +322,6 @@ body {
     background-color: var(--light-grayish-blue-1);
 }
 
-.notification--unread-background {
-    background-color: var(--very-light-grayish-blue);
-    transition: all 0.3s ease;
-    border-radius: 0.5rem;
-    cursor: pointer;
-}
 
 
 

@@ -1,46 +1,45 @@
+'use strict'
+
 const readButton = document.querySelector('.notifications__read-btn');
-const notificationsBody = document.querySelector('.notifications-wrapper');
-const numberOfNotificationsElement = document.querySelector('.notifications__number');
-const notifications = document.querySelectorAll('.notification.notification--unread-background');
+const notifications = document.querySelectorAll('.notification.notification--unchecked');
 const unreadIcons = document.querySelectorAll('.notification__unread-icon');
-const notificationNumberElement = document.querySelector('.notifications__number');
+const notificationsNumberElement = document.querySelector('.notifications__number');
+const btnLightTheme = document.querySelector('.notifications__btn-theme--light');
+const btnDarkTheme = document.querySelector('.notifications__btn-theme--dark');
+const body = document.querySelector('body');
 
 // When the user clicks markAsReadButton
 readButton.addEventListener('click', () => {
-  notificationNumberElement.style.display = 'none';
+  notificationsNumberElement.style.display = 'none';
   notifications.forEach((notification, index) => {
-      notification.classList.remove('notification--unread-background');
+      notification.classList.remove('notification--unchecked');
       unreadIcons[index].style.display = 'none';
   });
 })
 
 
-// When the user clicks notification button
+// When the user clicks unread notification
 let numberOfNotifications = 3;
 notifications.forEach((notification, index) => {
     notification.addEventListener('click', () => {
-        notification.classList.remove('notification--unread-background');
+        notification.classList.remove('notification--unchecked');
         unreadIcons[index].style.display = 'none';
 
         numberOfNotifications = numberOfNotifications - 1;
         if (numberOfNotifications > 0) {
-            numberOfNotificationsElement.textContent = numberOfNotifications;
+            notificationsNumberElement.textContent = numberOfNotifications;
         } else  {
-            notificationNumberElement.style.display = 'none';
+            notificationsNumberElement.style.display = 'none';
         }
   })
 })
 
 // Dark mode toggle
-const lightModeIcon = document.querySelector('.notifications__icon--light');
-const darkModeIcon = document.querySelector('.notifications__icon--dark');
-const body = document.querySelector('body');
-
-darkModeIcon.addEventListener('click', () => {
+btnDarkTheme.addEventListener('click', () => {
   body.classList.add('dark-mode');
 })
 
-lightModeIcon.addEventListener('click', () => {
+btnLightTheme.addEventListener('click', () => {
   body.classList.remove('dark-mode')
 })
 
