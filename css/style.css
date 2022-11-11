@@ -13,14 +13,11 @@
     --dark-gray-blue: hsl(219, 12%, 42%);
     --very-dark-blue: hsl(224, 21%, 14%);
 
-    /* Font Family */
+    /* Typography*/
     --font-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
 
-    /* Font Size*/
     --font-size-200: 1.25rem;
     --font-size-100: 0.875rem;
-
-    /* Font weight*/
     --font-weight-medium: 400;
     --font-weight-bold: 700;
     --font-weight-extra-bold: 800;
