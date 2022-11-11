@@ -1,27 +1,32 @@
 const readButton = document.querySelector('.notifications__read-btn');
-const notifications = document.querySelector('.notifications-wrapper');
-const numberOfNotifications = document.querySelector('.notifications__number');
-const notificationList = document.querySelectorAll('.notification');
+const notificationsBody = document.querySelector('.notifications-wrapper');
+const numberOfNotificationsElement = document.querySelector('.notifications__number');
+const notifications = document.querySelectorAll('.notification.notification--unread-background');
 const unreadIcons = document.querySelectorAll('.notification__unread-icon');
+const notificationNumberElement = document.querySelector('.notifications__number');
 
 // When the user clicks markAsReadButton
 readButton.addEventListener('click', () => {
-  notifications.classList.add('no-unread-message');
-  numberOfNotifications.textContent = 0;
-  for (let notification of notificationList) {
-    notification.classList.remove('unread-background');
-  }
+  notificationNumberElement.style.display = 'none';
+  notifications.forEach((notification, index) => {
+      notification.classList.remove('notification--unread-background');
+      unreadIcons[index].style.display = 'none';
+  });
 })
 
+
 // When the user clicks notification button
-notificationList.forEach((notification, index) => {
+let numberOfNotifications = 3;
+notifications.forEach((notification, index) => {
     notification.addEventListener('click', () => {
-        notification.classList.remove('unread-background');
+        notification.classList.remove('notification--unread-background');
         unreadIcons[index].style.display = 'none';
-        if (Number(numberOfNotifications.textContent) < 1) {
-            numberOfNotifications.textContent = '0';
-        } else {
-            numberOfNotifications.textContent = String(numberOfNotifications.textContent - 1);
+
+        numberOfNotifications = numberOfNotifications - 1;
+        if (numberOfNotifications > 0) {
+            numberOfNotificationsElement.textContent = numberOfNotifications;
+        } else  {
+            notificationNumberElement.style.display = 'none';
         }
   })
 })

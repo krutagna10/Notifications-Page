@@ -135,7 +135,7 @@ body {
     }
 }
 
-.primary-heading {
+.notifications__title {
     font-size: var(--font-size-200);
     font-weight: var(--font-weight-extra-bold);
     color: var(--very-dark-blue);
@@ -171,13 +171,12 @@ body {
 @media (min-width:32rem) {
     .notifications__header-buttons {
         flex-direction: row;
-        gap: 0.5rem;
+        gap: 1rem;
     }
     .notifications__icons {
         order: 1;
     }
 }
-
 
 .notifications__read-btn {
     margin-left: auto;
@@ -284,12 +283,6 @@ body {
     border-radius: 0.5rem;
     cursor: pointer;
 }
-
-.no-unread-message .notification__unread-icon {
-    display: none;
-    transition: all 0.3s ease;
-}
-
 
 /* Icons */
 .notifications__icons{
