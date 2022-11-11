@@ -10,13 +10,11 @@
     --light-grayish-blue-1: hsl(211, 68%, 94%);
     --light-grayish-blue-2: hsl(205, 33%, 90%);
     --grayish-blue: hsl(219, 14%, 63%);
-    --dark-grayish-blue: hsl(219, 12%, 42%);
+    --dark-gray-blue: hsl(219, 12%, 42%);
     --very-dark-blue: hsl(224, 21%, 14%);
 
 
     /* Dark Mode Colors */
-    --darkModeBackground: #212121;
-    --containerDarkBackground: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.8) 100%);
     --darkModeTextColor: #adb5bd;
     --darkModeGroupMessage: #1098ad;
 
@@ -30,6 +28,7 @@
     /* Font weight*/
     --font-weight-medium: 400;
     --font-weight-bold: 700;
+    --font-weight-extra-bold: 800;
 
     /* Spacing */
     --flow-space: 0.5rem;
@@ -45,6 +44,12 @@
 /* Dark Mode*/
 .dark-mode {
     --hoverColor: #15aabf;
+    --very-light-grayish-blue: #212121;
+    --very-dark-blue: hsl(0, 0%, 100%);
+    --dark-gray-blue: hsl(205, 33%, 90%);
+    --blue: #15aabf;
+    --light-grayish-blue-1: #212121;
+    --container-dark-background: linear-gradient(to right, #434343 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 /* CSS Reset*/
@@ -61,25 +66,37 @@ img {
 
 button {
     font: inherit;
+    color: inherit;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
 }
 
 /* Body Styling */
 body {
+    font-family: var(--font-jakarta-sans);
+    color: var(--dark-gray-blue);
+    background-color: var(--very-light-grayish-blue);
+    font-size: var(--font-size-100);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--font-jakarta-sans);
-    background-color: var(--very-light-grayish-blue);
-    font-size: var(--font-size-100);
 }
+
 
 /* Utility Classes */
 .container {
-    background-color: var(--white);
+    background: var(--white);
     padding: 1.75rem 1rem;
     max-width: 48rem;
     position: relative;
+}
+
+.dark-mode .container {
+    background-image: var(--container-dark-background);
 }
 
 @media (min-width: 32rem) {
@@ -92,6 +109,7 @@ body {
     .container {
         border-radius: 1rem;
         padding-inline: 2rem;
+        box-shadow: 3px 2px 10px rgba(0, 0, 0, 0.25);
     }
 }
 
@@ -99,10 +117,14 @@ body {
     margin-top: var(--flow-space);
 }
 
+.flex {
+    display: flex;
+}
+
 /* Notification Header */
 .notifications__header {
-    display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 0.75rem;
     margin-bottom: 2rem;
 }
@@ -115,7 +137,8 @@ body {
 
 .primary-heading {
     font-size: var(--font-size-200);
-    font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-extra-bold);
+    color: var(--very-dark-blue);
 }
 
 .notifications__number {
@@ -127,6 +150,7 @@ body {
     width: 2.3rem;
     display: grid;
     place-items: center;
+    margin-left: 0.75rem;
 }
 
 @media (min-width: 48rem) {
@@ -135,17 +159,35 @@ body {
     }
 }
 
+.notifications__header-buttons {
+    flex-direction: column;
+}
+
+.notifications__icons {
+    order: -1;
+    align-self: end;
+}
+
+@media (min-width:32rem) {
+    .notifications__header-buttons {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    .notifications__icons {
+        order: 1;
+    }
+}
+
+
 .notifications__read-btn {
     margin-left: auto;
     border: none;
     background: transparent;
-    color: var(--dark-grayish-blue);
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
 /* Notifications */
-
 .notification {
     display: flex;
     padding: 1rem;
@@ -172,20 +214,18 @@ body {
 /* Messages */
 .notification__message {
     margin-bottom: 0.5rem;
-    color: var(--dark-grayish-blue);
     font-weight: var(--font-weight-medium);
 }
 
 .notification__user-name {
     text-decoration: none;
-    font-weight: 800;
+    font-weight: var(--font-weight-bold);
     margin-right: 0.25rem;
-    color: black;
     transition: all 0.3s ease;
+    color: var(--very-dark-blue);
 }
 
 .notification__recent-post {
-    color: var(--dark-grayish-blue);
     text-decoration: none;
     font-weight: var(--font-weight-bold);
     margin-left: 0.25rem;
@@ -225,7 +265,7 @@ body {
     margin-top: 0.75rem;
     border-radius: 0.5em;
     border: 1px solid var(--grayish-blue);
-    color: var(--dark-grayish-blue);
+    color: var(--dark-gray-blue);
     transition: all 0.3s ease;
     cursor: pointer;
 }
@@ -249,5 +289,37 @@ body {
     display: none;
     transition: all 0.3s ease;
 }
+
+
+/* Icons */
+.notifications__icons{
+    display: block;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.icon--light-mode {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.dark-mode .icon--dark-mode {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.icon--dark-mode:hover {
+    color: lightseagreen;
+}
+
+.dark-mode .icon--light-mode {
+    display: block;
+    color: white;
+}
+
+.icon--light-mode:hover {
+    color: orange;
+}
+
 
 

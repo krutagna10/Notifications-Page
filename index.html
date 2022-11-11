@@ -7,34 +7,40 @@
 
     <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dark-theme.css">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <title>Frontend Mentor | Notifications page</title>
 </head>
 <body class="dark-mode">
 
-<div class="icon">
-    <ion-icon class="icon--light-mode" name="sunny-outline"></ion-icon>
-    <ion-icon class="icon--dark-mode" name="moon-outline"></ion-icon>
-</div>
+
 
 <main>
     <section class="notification-section">
 
         <div class="notifications container">
-            <header class="notifications__header">
-                <h1 class="notifications__title primary-heading">
-                    Notifications
-                </h1>
-                <div class="notifications__number">3</div>
-                <button class="notifications__read-btn btn">Mark all as read</button>
+            <header class="notifications__header flex">
+                <div class="flex">
+                    <h1 class="notifications__title primary-heading">
+                        Notifications
+                    </h1>
+                    <div class="notifications__number">3</div>
+                </div>
+                <div class="notifications__header-buttons flex">
+                    <button class="notifications__read-btn btn">Mark all as read</button>
+                    <div class="notifications__icons">
+                        <ion-icon class="icon--light-mode" name="sunny-outline"></ion-icon>
+                        <ion-icon class="icon--dark-mode" name="moon-outline"></ion-icon>
+                    </div>
+                </div>
+
             </header>
 
             <div class="notifications-wrapper flow">
                 <div class="notification notification--unread-background">
                     <div class="notification__profile-wrapper">
-                        <img class="notification__profile-pic" src="images/avatar-mark-webber.webp" alt="Mark Webber profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-mark-webber.webp"
+                             alt="Mark Webber profile picture">
                     </div>
                     <div class="notification__text-content">
                         <p class="notification__message">
@@ -51,7 +57,8 @@
 
                 <div class="notification notification--unread-background">
                     <div class="notification__profile-wrapper">
-                        <img class="notification__profile-pic" src="images/avatar-angela-gray.webp" alt="Angela Gray profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-angela-gray.webp"
+                             alt="Angela Gray profile picture">
                     </div>
                     <div class="text-content">
                         <p class="notification__message">
@@ -68,7 +75,8 @@
 
                 <div class="notification notification--unread-background">
                     <div class="notification__profile-wrapper">
-                        <img class="notification__profile-pic" src="images/avatar-jacob-thompson.webp" alt="Jacob Thompson profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-jacob-thompson.webp"
+                             alt="Jacob Thompson profile picture">
                     </div>
                     <div class="text-content">
                         <p class="notification__message">
@@ -85,7 +93,8 @@
 
                 <div class="notification">
                     <div class="notification__profile-wrapper temp">
-                        <img class="notification__profile-pic" src="images/avatar-rizky-hasanuddin.webp" alt="Rizky Hasanuddin profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-rizky-hasanuddin.webp"
+                             alt="Rizky Hasanuddin profile picture">
                     </div>
                     <div class="text-content">
                         <p class="notification__message">
@@ -97,7 +106,8 @@
                         </p>
                         <div class="notification__private-message-wrapper">
                             <p class="notification__private-message">
-                                Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and I'm already having lots of fun and improving my game.
+                                Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and
+                                I'm already having lots of fun and improving my game.
                             </p>
                         </div>
                     </div>
@@ -105,7 +115,8 @@
 
                 <div class="notification">
                     <div class="notification__profile-wrapper">
-                        <img class="notification__profile-pic" src="images/avatar-kimberly-smith.webp" alt="Kimberly Smith profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-kimberly-smith.webp"
+                             alt="Kimberly Smith profile picture">
                     </div>
                     <div class="text-content">
                         <p class="notification__message">
@@ -124,13 +135,15 @@
 
                 <div class="notification">
                     <div class="notification__profile-wrapper">
-                        <img class="notification__profile-pic" src="images/avatar-nathan-peterson.webp" alt="Nathan Peterson profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-nathan-peterson.webp"
+                             alt="Nathan Peterson profile picture">
                     </div>
                     <div class="text-content">
                         <p class="notification__message">
                             <a href="#" class="notification__user-name">Nathan Peterson </a>
                             reacted to your recent post
-                            <a href="#" class="notification__recent-post">5 end-game strategies to increase your win rate</a>
+                            <a href="#" class="notification__recent-post">5 end-game strategies to increase your win
+                                rate</a>
                         </p>
                         <p class="notification__time">
                             2 weeks ago
@@ -140,7 +153,8 @@
 
                 <div class="notification">
                     <div class="notification__profile-wrapper">
-                        <img class="notification__profile-pic" src="images/avatar-anna-kim.webp" alt="Anna Kim profile picture">
+                        <img class="notification__profile-pic" src="images/avatar-anna-kim.webp"
+                             alt="Anna Kim profile picture">
                     </div>
                     <div class="text-content">
                         <p class="notification__message">
