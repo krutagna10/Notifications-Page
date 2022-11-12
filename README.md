@@ -14,4 +14,8 @@
 - CSS 
 - Vanilla Javascript
 
+### What I Learned
+
+- Tabindex Property
+
 
