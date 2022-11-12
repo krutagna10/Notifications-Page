@@ -4,8 +4,8 @@ const readButton = document.querySelector('.notifications__read-btn');
 const notifications = document.querySelectorAll('.notification.notification--unchecked');
 const unreadIcons = document.querySelectorAll('.notification__unread-icon');
 const notificationsNumberElement = document.querySelector('.notifications__number');
-const btnLightTheme = document.querySelector('.notifications__btn-theme--light');
-const btnDarkTheme = document.querySelector('.notifications__btn-theme--dark');
+const btnThemeToggle = document.querySelector('.notifications__btn-theme');
+
 const body = document.querySelector('body');
 
 // When the user clicks markAsReadButton
@@ -35,13 +35,8 @@ notifications.forEach((notification, index) => {
 })
 
 // Dark mode toggle
-btnDarkTheme.addEventListener('click', () => {
-  body.classList.add('dark-mode');
+btnThemeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
 })
-
-btnLightTheme.addEventListener('click', () => {
-  body.classList.remove('dark-mode')
-})
-
 
 

@@ -163,22 +163,8 @@ body {
 .notifications__btn-theme {
     background: transparent;
     border: none;
-}
-
-.notifications__btn-theme--light {
-    display: none;
-}
-
-.notifications__btn-theme--dark {
-    display: block;
-}
-
-.dark-mode .notifications__btn-theme--light {
-    display: block;
-}
-
-.dark-mode .notifications__btn-theme--dark {
-    display: none;
+    display: grid;
+    place-items: center;
 }
 
 .notifications__icon {
@@ -188,16 +174,30 @@ body {
 }
 
 .notifications__icon--light {
-    color: white;
+    display: none;
 }
 
 .notifications__icon--light:hover {
     color: orange;
 }
 
+.notification__icon-dark {
+    display: block;
+}
+
 .notifications__icon--dark:hover {
     color: lightseagreen;
 }
+
+.dark-mode .notifications__icon--dark {
+    display: none;
+}
+
+.dark-mode .notifications__icon--light {
+    display: block;
+}
+
+
 
 @media (min-width: 24rem) {
     .notifications__header-buttons {
